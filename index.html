@@ -4,13 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Al Aqsa Auto Transport - Professional Vehicle Shipping Nationwide</title>
+  <meta name="description" content="Professional auto transport services nationwide. Licensed, insured vehicle shipping with real-time tracking. Get your free quote today!">
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+        emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+    })();
+  </script>
 </head>
 
 <body>
@@ -37,7 +45,7 @@
           </li>
 
           <li>
-            <a href="#">About</i></a>
+            <a href="#about-us">About</a>
             <!-- <ul class="dropdown">
               <li><a href="#">HTML</a></li>
               <li><a href="#">CSS</a></li>
@@ -47,7 +55,7 @@
           </li>
 
           <li>
-            <a href="#">Praduct</a>
+            <a href="#products">Products</a>
             <!-- <ul class="dropdown">
               <li><a href="#">HTML</a></li>
               <li><a href="#">CSS</a></li>
@@ -57,7 +65,7 @@
           </li>
 
           <li>
-            <a href="#">Services</i></a>
+            <a href="#services">Services</a>
             <!-- <ul class="dropdown">
               <li><a href="#">HTML</a></li>
               <li><a href="#">CSS</a></li>
@@ -92,7 +100,7 @@
             <p>Safe, reliable, and affordable vehicle shipping <br> nationwide with licensed carriers and real-time
               tracking
             </p>
-            <button><a href="#">Get Instant Quote</a></button>
+            <button><a href="#quote-form">Get Instant Quote</a></button>
           </div>
         </div>
       </div>
@@ -103,61 +111,121 @@
 
 
     <!-- Get Your Free Quote Start -->
-    <section>
+    <section id="quote-form">
       <div class="container">
-        <div class="quato-main">
-          <div class="quato">
-            <h1 class="gtyq">Get Your Free Quote</h1>
-            <div class="six-column">
-              <div class="three-select-flex">
-                <div class="Pickup-location">
-                  <h4>Pickup Location</h4>
-                  <div class="location">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <input type="text" placeholder="Enter Pickup Location">
-                  </div>
-                </div>
-                <div class="Pickup-location">
-                  <h4>Pickup Location</h4>
-                  <div class="location">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <input type="text" placeholder="Enter Pickup Location">
-                  </div>
-                </div>
-                <div class="Pickup-location">
-                  <h4>Pickup Location</h4>
-                  <div class="location">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <input type="text" placeholder="Enter Pickup Location">
-                  </div>
-                </div>
-              </div>
-              <div class="three-select-flex margin">
-                <div class="Pickup-location">
-                  <h4>Pickup Location</h4>
-                  <div class="location">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <input type="text" placeholder="Enter Pickup Location">
-                  </div>
-                </div>
-                <div class="Pickup-location">
-                  <h4>Pickup Location</h4>
-                  <div class="location">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <input type="text" placeholder="Enter Pickup Location">
-                  </div>
-                </div>
-                <div class="Pickup-location">
-                  <h4>Pickup Location</h4>
-                  <div class="location">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <input type="text" placeholder="Enter Pickup Location">
-                  </div>
-                </div>
-              </div>
-              <button class="quato-btn">Get My Quote Now</button>
-            </div>
+        <div class="quote-main">
+          <div class="quote-header">
+            <h1>Get Your Free Quote</h1>
+            <p>Fill out the form below and we'll get back to you within 24 hours</p>
           </div>
+          <form id="quoteForm" class="quote-form-container">
+            <!-- Contact Information -->
+            <div class="form-section">
+              <h3><i class="fa-solid fa-user"></i> Contact Information</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Full Name *</label>
+                  <input type="text" name="fullName" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                  <label>Email *</label>
+                  <input type="email" name="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                  <label>Phone *</label>
+                  <input type="tel" name="phone" placeholder="(619) 944-8954" required>
+                </div>
+              </div>
+            </div>
+
+            <!-- Locations -->
+            <div class="form-section">
+              <h3><i class="fa-solid fa-route"></i> Pickup & Delivery Locations</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Pickup City/ZIP *</label>
+                  <input type="text" name="pickupLocation" placeholder="San Diego, CA 92101" required>
+                </div>
+                <div class="form-group">
+                  <label>Delivery City/ZIP *</label>
+                  <input type="text" name="deliveryLocation" placeholder="Los Angeles, CA 90001" required>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vehicle Information -->
+            <div class="form-section">
+              <h3><i class="fa-solid fa-car"></i> Vehicle Information</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Vehicle Make *</label>
+                  <input type="text" name="vehicleMake" placeholder="Toyota" required>
+                </div>
+                <div class="form-group">
+                  <label>Vehicle Model *</label>
+                  <input type="text" name="vehicleModel" placeholder="Camry" required>
+                </div>
+                <div class="form-group">
+                  <label>Vehicle Year *</label>
+                  <input type="number" name="vehicleYear" placeholder="2020" min="1900" max="2025" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Transport Type *</label>
+                  <select name="transportType" required>
+                    <option value="">Select Type</option>
+                    <option value="open">Open Transport (Most Popular)</option>
+                    <option value="enclosed">Enclosed Transport</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Vehicle Condition *</label>
+                  <select name="vehicleCondition" required>
+                    <option value="">Select Condition</option>
+                    <option value="running">Running (Starts & Drives)</option>
+                    <option value="not-running">Not Running</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Date Preferences -->
+            <div class="form-section">
+              <h3><i class="fa-solid fa-calendar-days"></i> Date Preferences</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Preferred Pickup Date</label>
+                  <input type="date" name="pickupDate" min="">
+                </div>
+                <div class="form-group">
+                  <label>Flexibility</label>
+                  <select name="flexibility">
+                    <option value="flexible">Flexible (±3 days)</option>
+                    <option value="moderate">Moderate (±1 day)</option>
+                    <option value="strict">Strict (Exact date)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Additional Notes -->
+            <div class="form-section">
+              <h3><i class="fa-solid fa-file-lines"></i> Additional Information</h3>
+              <div class="form-group full-width">
+                <label>Special Instructions or Notes</label>
+                <textarea name="notes" rows="4" placeholder="Any additional information that would help us provide a better quote..."></textarea>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-submit">
+              <button type="submit" class="quote-submit-btn">
+                <i class="fa-solid fa-paper-plane"></i> Get My Free Quote
+              </button>
+              <p class="form-disclaimer">By submitting this form, you agree to our terms of service and privacy policy.</p>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -212,7 +280,7 @@
 
 
     <!-- About Us Start -->
-    <section>
+    <section id="about-us">
       <div class="container">
         <div class="about-us">
           <h1>About Us</h1>
@@ -220,60 +288,49 @@
           <div class="about-commet">
             <div class="about-commet-three-flex">
               <div class="about-commet-box">
-                <i class="fa-solid fa-id-card"></i>
-                <h3>Licensed & Insured
-                </h3>
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Licensed & Insured</h3>
                 <p>All our carriers are fully licensed, <br> bonded, and insured with <br> comprehensive coverage up to
                   <br> $1M
                 </p>
                 <a href="#">DOT Certified Carriers</a>
               </div>
               <div class="about-commet-box">
-                <i class="fa-solid fa-id-card"></i>
-                <h3>Licensed & Insured
-                </h3>
-                <p>All our carriers are fully licensed, <br> bonded, and insured with <br> comprehensive coverage up to
-                  <br> $1M
+                <i class="fa-solid fa-dollar-sign"></i>
+                <h3>Best Price Guarantee</h3>
+                <p>We work with you to find the best rates. <br> Competitive pricing with <br> no hidden fees or <br> unexpected charges
                 </p>
-                <a href="#">DOT Certified Carriers</a>
+                <a href="#">View Our Rates</a>
               </div>
               <div class="about-commet-box">
-                <i class="fa-solid fa-id-card"></i>
-                <h3>Licensed & Insured
-                </h3>
-                <p>All our carriers are fully licensed, <br> bonded, and insured with <br> comprehensive coverage up to
-                  <br> $1M
+                <i class="fa-solid fa-clock"></i>
+                <h3>On-Time Delivery</h3>
+                <p>96% of our deliveries arrive on time. <br> We track your vehicle <br> every step of the way <br> with real-time updates
                 </p>
-                <a href="#">DOT Certified Carriers</a>
+                <a href="#">Track Your Vehicle</a>
               </div>
             </div>
             <div class="about-commet-three-flex about-top">
               <div class="about-commet-box">
-                <i class="fa-solid fa-id-card"></i>
-                <h3>Licensed & Insured
-                </h3>
-                <p>All our carriers are fully licensed, <br> bonded, and insured with <br> comprehensive coverage up to
-                  <br> $1M
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>Wide Coverage Area</h3>
+                <p>Nationwide auto transport services. <br> We deliver to all 48 states <br> and provide door-to-door <br> convenience
                 </p>
-                <a href="#">DOT Certified Carriers</a>
+                <a href="#">Service Areas</a>
               </div>
               <div class="about-commet-box">
-                <i class="fa-solid fa-id-card"></i>
-                <h3>Licensed & Insured
-                </h3>
-                <p>All our carriers are fully licensed, <br> bonded, and insured with <br> comprehensive coverage up to
-                  <br> $1M
+                <i class="fa-solid fa-star"></i>
+                <h3>5-Star Service</h3>
+                <p>Rated 4.8/5 by our customers. <br> Professional drivers and <br> exceptional customer service <br> throughout the journey
                 </p>
-                <a href="#">DOT Certified Carriers</a>
+                <a href="#">Read Reviews</a>
               </div>
               <div class="about-commet-box">
-                <i class="fa-solid fa-id-card"></i>
-                <h3>Licensed & Insured
-                </h3>
-                <p>All our carriers are fully licensed, <br> bonded, and insured with <br> comprehensive coverage up to
-                  <br> $1M
+                <i class="fa-solid fa-headset"></i>
+                <h3>24/7 Support</h3>
+                <p>Round-the-clock assistance. <br> Our team is always ready <br> to help with any questions <br> or concerns
                 </p>
-                <a href="#">DOT Certified Carriers</a>
+                <a href="#">Contact Support</a>
               </div>
             </div>
           </div>
@@ -290,27 +347,24 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="coursel-relative">
-              <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus sequi modi dolore nesciunt
-                cupiditate
-                repellat consequatur impedit placeat, odio nam.</h1>
+              <h1>"Al Aqsa Auto Transport made my cross-country move incredibly smooth. Professional, reliable, and my car arrived exactly as promised. Highly recommend!"</h1>
+              <p class="testimonial-author">- Sarah Johnson, California</p>
             </div>
-            <img src="./img/coursel-imd2.jpg" alt="...">
+            <img src="./img/coursel-imd2.jpg" alt="Customer Testimonial">
           </div>
           <div class="carousel-item">
             <div class="coursel-relative">
-              <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus sequi modi dolore nesciunt
-                cupiditate
-              </h1>
+              <h1>"Excellent customer service from start to finish. They kept me informed every step of the way and delivered my classic car with utmost care. Truly professional service!"</h1>
+              <p class="testimonial-author">- Michael Chen, New York</p>
             </div>
-            <img src="./img/coursel-imd2.jpg" alt="...">
+            <img src="./img/coursel-imd2.jpg" alt="Customer Testimonial">
           </div>
           <div class="carousel-item">
             <div class="coursel-relative">
-              <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus sequi modi dolore nesciunt
-                cupiditate
-              </h1>
+              <h1>"Fast response time, competitive pricing, and my vehicle arrived on time without any damage. This is how auto transport should be done. Five stars!"</h1>
+              <p class="testimonial-author">- David Rodriguez, Texas</p>
             </div>
-            <img src="./img/coursel-imd2.jpg" alt="...">
+            <img src="./img/coursel-imd2.jpg" alt="Customer Testimonial">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -334,11 +388,11 @@
     <div class="top-footer">
       <div class="container">
         <div class="Vehicle">
-          <h1>Ready to Ship Your Vehicle?</h1>
-          <p>Get your free quote today and experience the AutoShip Pro difference</p>
+            <h1>Ready to Ship Your Vehicle?</h1>
+            <p>Get your free quote today and experience the Al Aqsa Auto Transport difference</p>
           <div class="top-footer-btn">
-            <button>Get Free Quote</button>
-            <button>Call (800) 123-4567</button>
+            <button onclick="document.getElementById('quote-form').scrollIntoView({ behavior: 'smooth' })">Get Free Quote</button>
+            <button onclick="window.location.href='tel:6199448954'">Call (619) 944-8954</button>
           </div>
         </div>
       </div>
@@ -365,17 +419,17 @@
           </div>
           <div class="footer-box">
             <h3>Quick Links</h3>
-            <h4>Get Quote</h4>
-            <h4>Get Quote</h4>
-            <h4>Get Quote</h4>
-            <h4>Get Quote</h4>
+            <h4><a href="#quote-form">Get Free Quote</a></h4>
+            <h4><a href="#how-it-works">How It Works</a></h4>
+            <h4><a href="#about-us">About Us</a></h4>
+            <h4><a href="#services">Our Services</a></h4>
           </div>
           <div class="footer-box">
             <h3>Services</h3>
-            <h4>Get Quote</h4>
-            <h4>Get Quote</h4>
-            <h4>Get Quote</h4>
-            <h4>Get Quote</h4>
+            <h4>Auto Transport</h4>
+            <h4>Open Carrier</h4>
+            <h4>Enclosed Carrier</h4>
+            <h4>Door-to-Door Delivery</h4>
           </div>
           <div class="footer-box padding-footer">
             <h3>Contact Info</h3>
