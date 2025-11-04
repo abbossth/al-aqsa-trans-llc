@@ -85,7 +85,8 @@ function formatMessageForTelegram(data) {
   message += `👤 *Contact Information*\n`;
   message += `Name: ${data.fullName}\n`;
   message += `Email: ${data.email}\n`;
-  message += `Phone: ${data.phone}\n\n`;
+  message += `Phone: ${data.phone}\n`;
+  message += `SMS Consent: ${data.smsConsent ? '✅ Yes' : '❌ No'}\n\n`;
   
   message += `📍 *Route Details*\n`;
   message += `Pickup: ${data.pickupLocation}\n`;
